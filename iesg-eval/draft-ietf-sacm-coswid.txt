@@ -2123,7 +2123,7 @@ Table of Contents
    This registry uses integer values as index values in CBOR maps.
 
    This document defines a new registry titled "CoSWID Items".  Future
-   registrations for this registry are to be made based on [RFC8126] as
+   registrations for this registry are to be made based on [BCP26] as
    follows:
 
         +==================+=====================================+
@@ -3417,11 +3417,6 @@ Table of Contents
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
               <https://www.rfc-editor.org/rfc/rfc7252>.
-
-   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
-              Writing an IANA Considerations Section in RFCs", BCP 26,
-              RFC 8126, DOI 10.17487/RFC8126, June 2017,
-              <https://www.rfc-editor.org/rfc/rfc8126>.
 
    [RFC8152]  Schaad, J., "CBOR Object Signing and Encryption (COSE)",
               RFC 8152, DOI 10.17487/RFC8152, July 2017,
