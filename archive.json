@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-07-12T20:05:34.946177+00:00",
+  "timestamp": "2022-02-09T10:23:40.621503+00:00",
   "repo": "sacmwg/draft-ietf-sacm-coswid",
   "labels": [
     {
@@ -893,16 +893,24 @@
       "id": "MDU6SXNzdWU4MTI5MjQ0OTE=",
       "title": "Just checking: smver ref",
       "url": "https://github.com/sacmwg/draft-ietf-sacm-coswid/issues/38",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "henkbirkholz",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Placeholder issue to check on current status wrt to semver",
       "createdAt": "2021-02-21T18:58:26Z",
-      "updatedAt": "2021-02-21T18:58:26Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2022-01-25T21:00:23Z",
+      "closedAt": "2022-01-25T21:00:23Z",
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "resolved",
+          "createdAt": "2022-01-25T21:00:23Z",
+          "updatedAt": "2022-01-25T21:00:23Z"
+        }
+      ]
     },
     {
       "number": 42,
@@ -1943,6 +1951,206 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDOBK4aBM4tP6Rv",
+      "title": "tasks assigned to Henk and Charles",
+      "url": "https://github.com/sacmwg/draft-ietf-sacm-coswid/pull/45",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "this is missing an answer to \"Can the tag-id be a digest of the source file?\", which requires a reply to the list",
+      "createdAt": "2021-10-15T11:59:54Z",
+      "updatedAt": "2022-01-19T17:11:37Z",
+      "baseRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "baseRefName": "master",
+      "baseRefOid": "034255375a6b2b8d23687eb0e690ad6b282a4149",
+      "headRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "headRefName": "ietf-112-updates",
+      "headRefOid": "9f635f4d487ba120896f4a9f3ffaa2d586a42e9e",
+      "closedAt": "2022-01-19T17:11:36Z",
+      "mergedAt": "2022-01-19T17:11:36Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "d643186d7681d38717ae558d477288ec1a9e20b6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOBK4aBM4unaFC",
+          "commit": {
+            "abbreviatedOid": "179e2c1"
+          },
+          "author": "david-waltermire-nist",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-10-18T13:48:51Z",
+          "updatedAt": "2021-10-18T13:48:52Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "```suggestion\r\nLoss of control of signing credentials used to sign CoSWID tags would create doubt about the authenticity and integrity of any CoSWID tags signed using the compromised keys. In such cases, the legitimate tag signer (namely, the software provider for an authoritative CoSWID tag) can employ uncompromised signing credentials to create a new signature on the original tag. The tag version number would not be incremented since the tag itself was not modified. Consumers of CoSWID tags would need to validate the tag using the new credentials and would also need to revoke certificates associated with the compromised credentials to avoid validating tags signed with them. The process for doing this is beyond the scope of this specification.\r\n```",
+              "createdAt": "2021-10-18T13:48:51Z",
+              "updatedAt": "2021-10-18T13:48:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOBK4aBM4unaVF",
+          "commit": {
+            "abbreviatedOid": "179e2c1"
+          },
+          "author": "david-waltermire-nist",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-10-18T13:49:35Z",
+          "updatedAt": "2021-10-18T13:49:35Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "This doesn't sound simple, so removing simple here would be better.",
+              "createdAt": "2021-10-18T13:49:35Z",
+              "updatedAt": "2021-10-18T13:49:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOBK4aBM4unbgn",
+          "commit": {
+            "abbreviatedOid": "179e2c1"
+          },
+          "author": "david-waltermire-nist",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-10-18T13:53:12Z",
+          "updatedAt": "2021-10-18T13:53:13Z",
+          "comments": [
+            {
+              "originalPosition": 104,
+              "body": "```suggestion\r\nAs noted in {{sec-sec}}, collected information about an endpoint's software load, such as what might be represented by an endpoint's CoSWID tag collection, could be used to identify vulnerable software for attack. Collections of endpoint software information also can have privacy implications for users. The set of application a user installs can give clues to personal matters such as political affiliation, banking and investments, gender, sexual orientation, medical concerns, etc. While the collection of CoSWID tags on an endpoint wouldn't increase the privacy risk (since a party able to view those tags could also view the applications themselves), if those CoSWID tags are gathered and stored in a repository somewhere, visibility into the repository now also gives visibility into a user's application collection. For this reason, repositories of collected CoSWID tags not only need to be protected against collection by malicious parties, but even authorized parties will need to be vetted and made aware of privacy responsibilities associated with having access to this information. Likewise, users should be made aware that their software inventories are being collected from endpoints. Furthermore, when collected and stored by authorized parties or systems, the inventory data needs to be protected as both security and privacy sensitive information.\r\n```",
+              "createdAt": "2021-10-18T13:53:12Z",
+              "updatedAt": "2021-10-18T13:53:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOBK4aBM4unkV6",
+          "commit": {
+            "abbreviatedOid": "179e2c1"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-10-18T14:10:37Z",
+          "updatedAt": "2021-10-18T14:12:34Z",
+          "comments": [
+            {
+              "originalPosition": 67,
+              "body": "ack",
+              "createdAt": "2021-10-18T14:10:37Z",
+              "updatedAt": "2021-10-18T14:12:34Z"
+            },
+            {
+              "originalPosition": 104,
+              "body": "ack",
+              "createdAt": "2021-10-18T14:11:52Z",
+              "updatedAt": "2021-10-18T14:12:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOBK4aBM4zFmWk",
+          "commit": {
+            "abbreviatedOid": "9f635f4"
+          },
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "Approved by editor's consensus",
+          "createdAt": "2022-01-19T17:11:08Z",
+          "updatedAt": "2022-01-19T17:11:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "id": "PR_kwDOBK4aBM4xlSMT",
+      "title": "addressing OPSDIR feedback about the SWID registry",
+      "url": "https://github.com/sacmwg/draft-ietf-sacm-coswid/pull/46",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Additional clarification on registry name",
+      "createdAt": "2022-01-25T20:52:20Z",
+      "updatedAt": "2022-01-25T20:59:51Z",
+      "baseRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "baseRefName": "master",
+      "baseRefOid": "d643186d7681d38717ae558d477288ec1a9e20b6",
+      "headRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "headRefName": "swid-coswid",
+      "headRefOid": "b98f9c3b83527bb19f03a5f969dd49ebfdf8b0e8",
+      "closedAt": "2022-01-25T20:59:51Z",
+      "mergedAt": "2022-01-25T20:59:51Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "9f51257b7fcba5d7f073a2ac49564d719a94ba40"
+      },
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "Merging due to Scott's go-ahead.",
+          "createdAt": "2022-01-25T20:59:24Z",
+          "updatedAt": "2022-01-25T20:59:24Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 47,
+      "id": "PR_kwDOBK4aBM4xoNt9",
+      "title": "adding expert review to standard action",
+      "url": "https://github.com/sacmwg/draft-ietf-sacm-coswid/pull/47",
+      "state": "MERGED",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "(might not be literally covered by RFC 8126)",
+      "createdAt": "2022-01-26T17:03:25Z",
+      "updatedAt": "2022-01-26T18:34:22Z",
+      "baseRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "baseRefName": "master",
+      "baseRefOid": "9f51257b7fcba5d7f073a2ac49564d719a94ba40",
+      "headRepository": "sacmwg/draft-ietf-sacm-coswid",
+      "headRefName": "expert-review",
+      "headRefOid": "cb9597cf62276b024ce49d53e160f75196afad29",
+      "closedAt": "2022-01-26T18:34:22Z",
+      "mergedAt": "2022-01-26T18:34:22Z",
+      "mergedBy": "henkbirkholz",
+      "mergeCommit": {
+        "oid": "b02c87419aa26d096ec565202cb1c7e92167c93d"
+      },
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "Approved by AD",
+          "createdAt": "2022-01-26T18:34:13Z",
+          "updatedAt": "2022-01-26T18:34:13Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
